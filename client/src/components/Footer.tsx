@@ -1,9 +1,10 @@
 import { Link } from "wouter";
 import { Box, Twitter, Facebook, Instagram } from "lucide-react";
+import { scrollToId } from "@/lib/utils";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white pt-12 pb-8">
+    <footer className="bg-gray-800 text-white pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="mb-8 md:mb-0">
@@ -46,6 +47,10 @@ const Footer = () => {
                 <a
                   href="/#features"
                   className="text-gray-400 hover:text-white transition duration-150"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToId("features");
+                  }}
                 >
                   Features
                 </a>
@@ -54,6 +59,10 @@ const Footer = () => {
                 <a
                   href="/#how-it-works"
                   className="text-gray-400 hover:text-white transition duration-150"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToId("how-it-works");
+                  }}
                 >
                   How It Works
                 </a>
@@ -62,6 +71,10 @@ const Footer = () => {
                 <a
                   href="/#download"
                   className="text-gray-400 hover:text-white transition duration-150"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToId("download");
+                  }}
                 >
                   Download
                 </a>

@@ -44,8 +44,11 @@ export class MemStorage implements IStorage {
     const id = this.currentDeletionRequestId++;
     const now = new Date();
     const deletionRequest: DeletionRequest = {
-      ...request,
       id,
+      name: request.name,
+      email: request.email,
+      reason: request.reason || null,
+      confirmed: request.confirmed || false,
       createdAt: now,
       processed: false,
       processedAt: null
