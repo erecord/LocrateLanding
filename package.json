@@ -1,6 +1,6 @@
 {
+  "homepage": "https://erecord.github.io/locrate-landing/",
   "name": "rest-express",
-  "homepage": "https://erecord.github.io/LocrateLanding",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
