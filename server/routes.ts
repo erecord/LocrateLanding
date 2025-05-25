@@ -13,19 +13,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(200).json({ success: true, message: "Deletion request received", id: deletionRequest.id });
     } catch (error) {
       if (error instanceof z.ZodError) {
-        res.status(400).json({ 
-          success: false, 
-          message: "Validation error", 
-          errors: error.errors 
+        res.status(400).json({
+          success: false,
+          message: "Validation error",
+          errors: error.errors
         });
       } else {
         console.error("Error processing deletion request:", error);
-        res.status(500).json({ 
-          success: false, 
-          message: "Internal server error" 
+        res.status(500).json({
+          success: false,
+          message: "Internal server error"
         });
       }
     }
+  });
+
+  // New endpoints to view storage data
+  app.get("/api/users", async (_req, res) => {
+    const users = await storage.getAllUsers();
+    res.json({ users });
+  });
+
+  app.get("/api/deletion-requests", async (_req, res) => {
+    const requests = await storage.getAllDeletionRequests();
+    res.json({ requests });
   });
 
   const httpServer = createServer(app);

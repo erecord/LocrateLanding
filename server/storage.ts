@@ -8,6 +8,8 @@ export interface IStorage {
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   createDeletionRequest(request: InsertDeletionRequest): Promise<DeletionRequest>;
+  getAllUsers(): Promise<User[]>;
+  getAllDeletionRequests(): Promise<DeletionRequest[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -39,7 +41,7 @@ export class MemStorage implements IStorage {
     this.users.set(id, user);
     return user;
   }
-  
+
   async createDeletionRequest(request: InsertDeletionRequest): Promise<DeletionRequest> {
     const id = this.currentDeletionRequestId++;
     const now = new Date();
@@ -55,6 +57,14 @@ export class MemStorage implements IStorage {
     };
     this.deletionRequests.set(id, deletionRequest);
     return deletionRequest;
+  }
+
+  async getAllUsers(): Promise<User[]> {
+    return Array.from(this.users.values());
+  }
+
+  async getAllDeletionRequests(): Promise<DeletionRequest[]> {
+    return Array.from(this.deletionRequests.values());
   }
 }
 
