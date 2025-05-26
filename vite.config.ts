@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: "/locrate-landing/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
