@@ -17,7 +17,7 @@ const Terms = () => {
 
               <h3 className="text-xl font-semibold mt-6 mb-3">2. Description of Service</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Locrate is a personal inventory management application that allows users to create virtual representations of their physical items, organize them into virtual boxes, and locate them using QR code technology.
+                Locrate is a personal inventory management application that allows users to create virtual representations of their physical items, organise them into virtual boxes, and locate them using QR code technology.
               </p>
 
               <h3 className="text-xl font-semibold mt-6 mb-3">3. User Accounts</h3>
