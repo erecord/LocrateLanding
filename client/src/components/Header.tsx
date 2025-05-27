@@ -74,6 +74,12 @@ const Header = () => {
             <a
               href="/#download"
               className="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-150"
+              onClick={(e) => {
+                if (location === "/") {
+                  e.preventDefault();
+                  scrollToId("download");
+                }
+              }}
             >
               Download App
             </a>
