@@ -57,7 +57,7 @@ const Home = () => {
             </div>
             <div className="md:w-1/2 flex justify-center">
               <img
-                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=700&q=80"
+                src="images/App_Crates_Page.png"
                 alt="Locrate app on smartphone"
                 className="rounded-xl shadow-lg w-3/4 h-auto max-w-sm"
               />
@@ -266,7 +266,7 @@ const Home = () => {
             </div>
             <div className="md:w-1/2 flex justify-center">
               <img
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=700&q=80"
+                src="images/App_Fancy_Dress.png"
                 alt="Locrate app scanning QR code"
                 className="rounded-xl shadow-lg w-3/4 h-auto max-w-sm"
               />
