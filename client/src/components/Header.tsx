@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Box } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { scrollToId } from "@/lib/utils";
 
@@ -34,8 +33,8 @@ const Header = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <div className="flex items-center text-primary font-bold text-2xl">
-                <Box className="mr-2 h-6 w-6" />
-                <span>locrate</span>
+
+                <img src="/svgs/Locrate_Logo_Blue.svg" alt="Locrate" className="h-12" />
               </div>
             </Link>
           </div>
