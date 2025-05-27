@@ -49,11 +49,11 @@ const Account = () => {
                 You can delete your account directly from the Locrate app by following these steps:
               </p>
               <ol className="list-decimal pl-5 text-gray-600 dark:text-gray-400 mb-4">
-                <li>Open the Locrate app on your device</li>
-                <li>Go to Settings (gear icon in the bottom right)</li>
-                <li>Tap on "Account"</li>
-                <li>Scroll down and select "Delete Account"</li>
-                <li>Follow the prompts to confirm deletion</li>
+                <li>Tap the More Tab in the bottom right of the screen</li>
+                <li>Tap 'Delete Account'</li>
+                <li>Read the warning and confirm you understand the action is permanent</li>
+                <li>Tap 'Delete'</li>
+                <li>You'll be signed out and your account and data will be deleted</li>
               </ol>
 
               <h3 className="text-xl font-semibold mt-6 mb-3">Option 2: Request Deletion by Email</h3>
