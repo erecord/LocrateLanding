@@ -170,10 +170,10 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Create Virtual Boxes</h3>
               <p className="text-gray-600">
-                Effortlessly set up digital containers that mirror your physical storage. Give them custom names, detailed descriptions, and organise by location or purpose.
+                Effortlessly set up digital containers that mirror your physical storage. These are called your Crates. Give them custom names, and organise by location or purpose.
               </p>
               <div className="mt-4 text-primary font-medium">
-                Perfect for: Storage units, wardrobes, lofts, and garages
+                Perfect for: Lofts, garages, storage units, wardrobes, etc.
               </div>
             </div>
 
@@ -184,8 +184,9 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Apply QR Stickers</h3>
               <p className="text-gray-600">
-                Print your personalised QR code stickers and affix them to your physical boxes or storage containers. Each QR code links directly to your virtual inventory.
+                Print your personalised QR code stickers and affix them to your physical boxes or storage containers. Each QR code links to an individual crate.
               </p>
+              <br />
               <div className="mt-4 text-primary font-medium">
                 Benefit: No more opening multiple boxes to find what you need
               </div>
