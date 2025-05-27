@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-accent text-white py-16 md:py-24">
+      <section className="bg-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
@@ -106,7 +106,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Smart Search</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Quickly find any item with our powerful search function. Filter by categories, locations, or custom tags.
+                Quickly find any item in any box with our powerful search function.
               </p>
             </div>
 
@@ -136,13 +136,16 @@ const Home = () => {
             </div>
 
             {/* Feature 6 */}
-            <div className="bg-white dark:bg-dark rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
+            <div className="bg-white dark:bg-dark rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300 relative overflow-hidden">
+              <div className="absolute -right-9 top-7 rotate-[45deg]">
+                <Badge variant="secondary" className="text-white text-md px-8 py-1 shadow-lg">Coming Soon</Badge>
+              </div>
               <div className="text-primary text-3xl mb-4">
                 <Bell className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Reminders</h3>
+              <h3 className="text-xl font-semibold mb-3">Many More Features</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Set reminders for borrowed items or things you need to return. Never miss a deadline again.
+                Stay tuned for new features including multiple inventories, advanced filtering, smart labels, and much more to come.
               </p>
             </div>
           </div>
