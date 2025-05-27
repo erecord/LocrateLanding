@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,8 +20,6 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const Account = () => {
-  const { toast } = useToast();
-  const [submitted, setSubmitted] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -36,15 +31,7 @@ const Account = () => {
     },
   });
 
-  const onSubmit = (values: FormValues) => {
-    // Just show success toast without API call
-    toast({
-      title: "Deletion Request Submitted",
-      description: "We've received your account deletion request and will process it within 30 days.",
-    });
-    form.reset();
-    setSubmitted(true);
-  };
+
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900">
@@ -101,104 +88,6 @@ const Account = () => {
                 Note: Some information may be retained for legal or legitimate business purposes as outlined in our Privacy Policy.
               </p>
             </div>
-
-            {/* Email Form */}
-            {submitted ? (
-              <div className="bg-green-100 dark:bg-green-800 rounded-lg p-6 text-center">
-                <h3 className="text-xl font-semibold mb-4">Thank You</h3>
-                <p className="text-gray-800 dark:text-gray-200">Your account deletion request has been received.</p>
-              </div>
-            ) : (
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">Contact Us for Account Deletion</h3>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Your registered email"
-                              {...field}
-                              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Your full name"
-                              {...field}
-                              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="reason"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Reason for Deletion (Optional)</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Please tell us why you're deleting your account"
-                              {...field}
-                              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                              rows={3}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="confirmed"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                            />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel>
-                              I understand that this action is permanent and cannot be undone once processed.
-                            </FormLabel>
-                          </div>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button
-                      type="submit"
-                      className="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-150"
-                    >
-                      Request Account Deletion
-                    </Button>
-                  </form>
-                </Form>
-              </div>
-            )}
           </CardContent>
         </Card>
       </div>
