@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -7,8 +7,19 @@ import { scrollToId } from "@/lib/utils";
 const Header = () => {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
 
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    // Handle scrolling after navigation to home page
+    if (location === "/" && pendingScroll) {
+      setTimeout(() => {
+        scrollToId(pendingScroll);
+        setPendingScroll(null);
+      }, 100);
+    }
+  }, [location, pendingScroll]);
 
   const navLinks = [
     { href: "/#features", label: "Features" },
@@ -23,6 +34,8 @@ const Header = () => {
       e.preventDefault();
       scrollToId(id);
       closeMenu();
+    } else {
+      setPendingScroll(id);
     }
   };
 
@@ -31,11 +44,11 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <a href="/" onClick={(e) => scrollToSection(e, "hero")} className="flex items-center">
               <div className="flex items-center text-primary font-bold text-2xl">
                 <img src="/svgs/Locrate_Logo_Blue.svg" alt="Locrate" className="h-12" />
               </div>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -44,7 +57,7 @@ const Header = () => {
               const isHash = link.href.includes("#");
               const id = isHash ? link.href.split("#")[1] : "";
 
-              if (isHash && location === "/") {
+              if (isHash) {
                 return (
                   <a
                     key={link.href}
@@ -113,7 +126,7 @@ const Header = () => {
                     const isHash = link.href.includes("#");
                     const id = isHash ? link.href.split("#")[1] : "";
 
-                    if (isHash && location === "/") {
+                    if (isHash) {
                       return (
                         <a
                           key={link.href}

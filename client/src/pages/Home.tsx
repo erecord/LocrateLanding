@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary text-white py-16 md:py-24">
+      <section id="hero" className="bg-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
