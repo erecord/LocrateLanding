@@ -11,6 +11,11 @@ const Home = () => {
 
   const handleStoreClick = (storeName: string) => (e: React.MouseEvent) => {
     e.preventDefault();
+
+    if (storeName === "App Store") {
+      storeName = `the ${storeName}`;
+    }
+
     toast({
       title: "Coming Soon",
       description: `We haven't launched on ${storeName} yet. Please check back soon.`,
