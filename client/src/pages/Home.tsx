@@ -221,7 +221,7 @@ const Home = () => {
       </section>
 
       {/* Download Section */}
-      <section id="download" className="py-20 bg-blue-700 text-white">
+      <section id="download" className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">

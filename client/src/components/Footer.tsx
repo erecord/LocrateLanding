@@ -9,8 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="mb-8 md:mb-0">
             <div className="flex items-center text-2xl font-bold mb-4">
-              <Box className="mr-2 h-6 w-6" />
-              <span>locrate</span>
+              <img src="/svgs/Locrate_Logo_White.svg" alt="Locrate" className="h-12" />
             </div>
             <p className="text-gray-400 mb-4">
               Organize your belongings simply and efficiently with QR code tracking.
@@ -117,10 +116,10 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a
-                  href="mailto:hello@locrate.app"
+                  href="mailto:contact@locrate.app"
                   className="hover:text-white transition duration-150"
                 >
-                  hello@locrate.app
+                  contact@locrate.app
                 </a>
               </li>
               <li>

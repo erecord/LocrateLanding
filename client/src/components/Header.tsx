@@ -33,7 +33,6 @@ const Header = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <div className="flex items-center text-primary font-bold text-2xl">
-
                 <img src="/svgs/Locrate_Logo_Blue.svg" alt="Locrate" className="h-12" />
               </div>
             </Link>
