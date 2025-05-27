@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { Box, QrCode, Search, Cloud, Share, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const Home = () => {
   const [location] = useLocation();
@@ -121,7 +122,10 @@ const Home = () => {
             </div>
 
             {/* Feature 5 */}
-            <div className="bg-white dark:bg-dark rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
+            <div className="bg-white dark:bg-dark rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300 relative overflow-hidden">
+              <div className="absolute -right-9 top-7 rotate-[45deg]">
+                <Badge variant="secondary" className="text-white text-md px-8 py-1 shadow-lg">Coming Soon</Badge>
+              </div>
               <div className="text-primary text-3xl mb-4">
                 <Share className="h-8 w-8" />
               </div>
