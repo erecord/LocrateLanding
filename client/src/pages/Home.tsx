@@ -239,7 +239,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <a
-                  href="#"
+                  href="/#download"
                   className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center"
                 >
                   <svg viewBox="0 0 384 512" width="24" height="24" className="mr-3" fill="currentColor">
@@ -251,7 +251,7 @@ const Home = () => {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="/#download"
                   className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center"
                 >
                   <svg viewBox="0 0 512 512" width="24" height="24" className="mr-3" fill="currentColor">
