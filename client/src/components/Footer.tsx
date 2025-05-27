@@ -1,8 +1,9 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Box, Twitter, Facebook, Instagram } from "lucide-react";
 import { scrollToId } from "@/lib/utils";
 
 const Footer = () => {
+  const [location] = useLocation();
   return (
     <footer className="bg-gray-800 text-white pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,8 +48,10 @@ const Footer = () => {
                   href="/#features"
                   className="text-gray-400 hover:text-white transition duration-150"
                   onClick={(e) => {
-                    e.preventDefault();
-                    scrollToId("features");
+                    if (location === "/") {
+                      e.preventDefault();
+                      scrollToId("features");
+                    }
                   }}
                 >
                   Features
@@ -59,8 +62,10 @@ const Footer = () => {
                   href="/#how-it-works"
                   className="text-gray-400 hover:text-white transition duration-150"
                   onClick={(e) => {
-                    e.preventDefault();
-                    scrollToId("how-it-works");
+                    if (location === "/") {
+                      e.preventDefault();
+                      scrollToId("how-it-works");
+                    }
                   }}
                 >
                   How It Works
@@ -71,8 +76,10 @@ const Footer = () => {
                   href="/#download"
                   className="text-gray-400 hover:text-white transition duration-150"
                   onClick={(e) => {
-                    e.preventDefault();
-                    scrollToId("download");
+                    if (location === "/") {
+                      e.preventDefault();
+                      scrollToId("download");
+                    }
                   }}
                 >
                   Download
