@@ -52,7 +52,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             {navLinks.map((link) => {
               const isHash = link.href.includes("#");
               const id = isHash ? link.href.split("#")[1] : "";
@@ -83,7 +83,7 @@ const Header = () => {
           </nav>
 
           {/* Download Button */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <a
               href="/#download"
               className="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-150"
@@ -99,7 +99,7 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" className="text-gray-600">

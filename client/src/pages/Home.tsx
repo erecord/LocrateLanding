@@ -179,7 +179,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-12">
             {/* Step 1 */}
             <div className="bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-105">
               <div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mb-6 mx-auto">
@@ -187,7 +187,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Create Virtual Boxes</h3>
               <p className="text-gray-600">
-                Effortlessly set up digital containers that mirror your physical storage. These are called your Crates. Give them custom names, and organise by location or purpose.
+                Effortlessly set up digital containers that mirror your physical storage. These are called your crates. Give them custom names, and organise by location or purpose.
               </p>
               <div className="mt-4 text-primary font-medium">
                 Perfect for: Lofts, garages, storage units, wardrobes, etc.
@@ -248,13 +248,13 @@ const Home = () => {
       {/* Download Section */}
       <section id="download" className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-10 md:mb-0">
+          <div className="flex flex-col lg:flex-row items-center">
+            <div className="lg:w-1/2 mb-10 lg:mb-0 text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Download Locrate Today</h2>
-              <p className="text-lg mb-8">
+              <p className="text-lg mb-8 max-w-md">
                 Available for iOS and Android devices. Start organising your life with just a few taps.
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start ">
                 <a
                   onClick={handleStoreClick("App Store")}
                   className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center"
@@ -281,12 +281,19 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="md:w-1/2 flex justify-center">
-              <img
-                src="images/App_Fancy_Dress.png"
-                alt="Locrate app scanning QR code"
-                className="rounded-xl shadow-lg w-3/4 h-auto max-w-sm"
-              />
+            <div className="lg:w-1/2">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                <img
+                  src="images/App_Fancy_Dress.png"
+                  alt="Locrate app scanning QR code"
+                  className="rounded-xl shadow-lg w-3/4 lg:w-1/2 h-auto max-w-sm"
+                />
+                <img
+                  src="images/App_Search.png"
+                  alt="Locrate app search"
+                  className="rounded-xl shadow-lg w-3/4 lg:w-1/2 h-auto max-w-sm"
+                />
+              </div>
             </div>
           </div>
         </div>
