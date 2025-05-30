@@ -13,7 +13,7 @@ const Footer = () => {
               <img src="/svgs/Locrate_Logo_White.svg" alt="Locrate" className="h-12" />
             </div>
             <p className="text-gray-400 mb-4">
-              Organize your belongings simply and efficiently with QR code tracking.
+              Organise your belongings simply and efficiently with QR code tracking.
             </p>
             <div className="flex space-x-4">
               <a
